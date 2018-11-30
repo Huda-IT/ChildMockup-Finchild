@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">Child_Mockup</string>
+
+   <string-array name="Child_array" >
+      <item > Child 1 </item>
+       <item > Child 2 </item>
+       <item > Child 3 </item>
+       <item > Child 4 </item>
+   </string-array>
+
+   <string-array name="Market_list_array" >
+      <item > ICA </item>
+       <item > COOP </item>
+       <item > HEMKÖP </item>
+       <item > ICA  MAXI</item>
+       <item > WILLYS </item>
+       <item > Paradiset Södermalm </item>
+       <item > Lidl </item>
+   </string-array>
+
+   <string-array name="Item_list_array"  >
+      <item > Apple </item>
+       <item > Orange </item>
+       <item > Kitkat </item>
+       <item > Bounty </item>
+       <item > Red bull </item>
+       <item > Energy Drink</item>
+       <item > Grap Juice </item>
+       <item > Cola </item>
+       <item > Pepsi </item>
+       <item > Milk </item>
+       <item > Water </item>
+   </string-array>
+
+   <string-array name="QTY_list_array" >
+      <item> 1 </item>
+       <item> 2 </item>
+       <item> 3 </item>
+       <item> 4 </item>
+       <item> 5 </item>
+   </string-array>
+
+
+</resources>
