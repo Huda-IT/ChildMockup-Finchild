@@ -21,23 +21,20 @@ import java.util.HashMap;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    FirebaseHelpClass firebaseHelper = new FirebaseHelpClass();
+
     private List<ChildAccount> childValues = new ArrayList<>();
     List<String> name_List = new ArrayList<>();
     List<String> childName_List = new ArrayList<>();
     List<String> parentNo_list = new ArrayList<>();
     ArrayList<Item> items_list = new ArrayList<>();
-
     HashMap<String, ChildInfo> childHashmap = new HashMap<String, ChildInfo>();
 
     ChildAccount childAccount;
-    ChildInfo childInfo;
 
     String choice1, choice2, choice3, key;
     int Qchoice1, Qchoice2, Qchoice3;
     double balance, totalAmount, currentbalance;
     String choice, accountNo, chidName, market_choice, name, parentAccNo, childAccNoID;
-
 
     private Button confirmBtn;
     private EditText purchaseDate;
@@ -45,21 +42,14 @@ public class MainActivity extends AppCompatActivity {
     private EditText itemPrice1;
     private EditText itemPrice2;
     private EditText itemPrice3;
-    private EditText messageText;
-    private Button sendMessage;
-    // final Session session=new Session(MainActivity.this);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // initialising child spinner names
         Values();
-        //initialiseChildSpinner();
-        //Values();
-        //getChildInfo(childHashmap);
-
 
         // Save purchase info to firebase
         confirmBtn = (Button) findViewById(R.id.purchase_btn);
@@ -105,15 +95,6 @@ public class MainActivity extends AppCompatActivity {
                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                         chidName = child_spinner.getSelectedItem().toString();
                         System.out.println(chidName);
-
-                        //balance = childAccount.getBalance();
-                        //accountNo = childAccount.getAccountNo();
-                        //System.out.println("BALANCE : " + balance + " ACCOUNTNO : " + accountNo);
-                       /* if (chidName.equals("Siqi's child")) accountNo = "098832998382";
-                         else if (chidName.equals("Siqi's child2")) accountNo = "32343203092";
-                        else if (chidName.equals("Siqi's Child3")) accountNo = "0765833996";
-                        else if (chidName.equals("Siqi's Child4")) accountNo = "45474474";
-                        System.out.println(" Child Account no " + accountNo);*/
                     }
 
                     @Override
@@ -121,8 +102,6 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 });
-
-
             }
 
             @Override
@@ -176,7 +155,6 @@ public class MainActivity extends AppCompatActivity {
 
                         //saving child name and info into a hashmap
                         childHashmap.put(name, childInfo);
-
 
                         final Spinner child_spinner = (Spinner) findViewById(R.id.childID_spinner);
                         ArrayAdapter<String> child_Adapter = new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_list_item_1, childName_List);
@@ -267,12 +245,10 @@ public class MainActivity extends AppCompatActivity {
                 Expenses purchase_list = new Expenses(key, market_choice, purchase_date, totalAmount, items_list);
 
                 // Pushing all purchase details into the firebase
-
                 childAccRef.push().setValue(purchase_list);
                 BalanceUpdate();
 
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
@@ -293,7 +269,6 @@ public class MainActivity extends AppCompatActivity {
         childAccRef.child("balance").setValue(balance);
 
         return balance;
-
     }
 
     // Creating Market Spinner
@@ -348,7 +323,6 @@ public class MainActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
-
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -357,7 +331,6 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
             }
         });
         return choice2;
@@ -445,7 +418,6 @@ public class MainActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Qchoice3 = Integer.parseInt(spinner.getSelectedItem().toString());
             }
-
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
@@ -454,10 +426,5 @@ public class MainActivity extends AppCompatActivity {
 
         return Qchoice3;
     }
-       /*
-        String message = messageText.getText().toString().trim();
-         messageText =(EditText) findViewById(R.id.mssage);
- */
-
 
 }
