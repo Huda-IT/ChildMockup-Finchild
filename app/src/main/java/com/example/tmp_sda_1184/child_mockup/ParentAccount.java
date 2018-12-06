@@ -1,26 +1,20 @@
-package com.finchild.hoppateam.sda4.finchild.modules;
+package com.example.tmp_sda_1184.child_mockup;
 
-public class parentAccount {
+public class ParentAccount {
 
-    private String parentAccountId;
     private String parentAccountNumber;
     private String parentCardNumber;
     private String name;
     private boolean status;
 
-    public parentAccount() {
+    public ParentAccount() {
     }
 
-    public parentAccount(String parentAccountId, String parentAccountNumber, String parentCardNumber, String name, boolean status) {
-        this.parentAccountId = parentAccountId;
+    public ParentAccount(String parentAccountNumber, String parentCardNumber, String name, boolean status) {
         this.parentAccountNumber = parentAccountNumber;
         this.parentCardNumber = parentCardNumber;
         this.name = name;
         this.status = status;
-    }
-
-    public String getParentAccountId() {
-        return parentAccountId;
     }
 
     public String getParentAccountNumber() {
@@ -37,10 +31,6 @@ public class parentAccount {
 
     public boolean isStatus() {
         return status;
-    }
-
-    public void setParentAccountId(String parentAccountId) {
-        this.parentAccountId = parentAccountId;
     }
 
     public void setParentAccountNumber(String parentAccountNumber) {

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Expenses {
 
-    private String expensesId;
+     String expensesId;
     private String store;
     private String date;
     private double totalAmount;
